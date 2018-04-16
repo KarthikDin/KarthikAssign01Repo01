@@ -1,0 +1,137 @@
+// This file will be used as a source file for the demonstration
+/*******
+**
+** Author		: Dinakaran, Karthik
+** Assignment 	: Project 01
+** Term 		: Spring, 2018
+** School 		: City University of Seattle
+** File Name	: StudentRecord.cpp
+** Description	: Definitions of the member function of the class StudentRecord
+** Date Created	: 06-April-2018
+**
+*******/
+//This program uses C++ standard library iostream class to involve 
+//the input and output operations
+// The set function for the attributes performs validation.
+#include <iostream>
+#include "StudentRecord.h" // Implementations of the StudentRecord member-function definitions.
+using namespace std;
+
+// constructor initializes the variables
+StudentRecord::StudentRecord()
+{
+	StudentID = 0;
+	StudentName = "";
+	CourseQuarter = "";
+	CumulativeGPA = 0;
+	GraduationYear = 0;
+} // end Constructor
+// function that sets the Student ID
+// ensures that the student id has at maximum 6 digit integer
+// Assumption is that the student id will not start with 0
+void StudentRecord::setStudentID(int SID)
+{
+	if (SID <= 999999) // Student ID should be allowed only 6 digits
+	{
+		this->StudentID = SID;
+	}
+	if (SID > 999999) // if student ID has more than 6 digits
+	{
+		cerr << "Validation failure in the StudentID\n"
+			<< "Student ID exceeds maximum length of (6).\n"
+			<< "Student ID will be given 0 by default \n" << endl;
+	}
+} // end function setStudentID
+// function that sets the Student name
+void StudentRecord::setStudentName(string StudentName)
+{
+	this->StudentName = StudentName;
+}
+// function that sets the Course Quarter
+// Assumption is the the input should be continuous string without space
+void StudentRecord::setCourseQuarter(string CQuarter)
+{
+	if (CQuarter.size() <= 12) // if the Course Quarter has 12 characters
+	{
+		this->CourseQuarter = CQuarter;
+	}
+	if (CQuarter.size() > 12) // if CourseQuarter has more than 12 characters
+	{
+		CourseQuarter = CQuarter.substr(0, 12); // limiting the variable with 12 characters
+		cerr << "CourseQuarter \"" << CQuarter << "\" exceeds maximum length (12).\n"
+			<< "Limiting CourseQuarter to first 12 characters.\n" << endl;
+	}
+} // end function setStudentName
+// function that sets the cumulative GPA for the current quarter
+void StudentRecord::setCumulativeGPA(double CumulativeGPA)
+{
+
+	if (CumulativeGPA <= 4 && CumulativeGPA >= 0) // Validating the GPA based on standard value
+	{
+		this->CumulativeGPA = CumulativeGPA;
+	}
+	else // otherwise from standard value
+	{
+		cerr << "Validation failure in the Cumulative GPA \n"
+			<< "CumulativeGPA should be in the range of 0 to 4.0.\n"
+			<< "CumulativeGPA will be given 0 by default \n" << endl;
+	}
+} // end function setCumulativeGPA
+//function that sets the expected graduation year of the student
+void StudentRecord::setGraduationYear(int GraduationYear)
+{
+	// assumption made that the value (year) should be between 1950 and 2025
+	if (GraduationYear >= 1950 && GraduationYear <= 2025) 
+	{
+		this->GraduationYear = GraduationYear;
+	}
+	else
+	{
+		cerr << "Validation failure in the Graduation Year \n"
+			<< "Graduation Year Should be a valid year between 1950 - 2025\n"
+			<< "Graduation Year will be given 0 by default \n" << endl;
+	}
+
+} // end function setGraduationYear
+
+// function that get the Student ID
+int StudentRecord::getStudentID()
+{
+	return StudentID; // return object's StudentID
+} // end function getStudentID
+
+//function that get the StudentName
+string StudentRecord::getStudentName()
+{
+	return StudentName; //return object's StudentID
+} // end function getStudentName
+
+//function that get the CourseQuarter
+string StudentRecord::getCourseQuarter()
+{
+	return CourseQuarter; //return object's Course Quarter
+} // end function getCourseQuarter
+
+//function that get the Cumulative GPA
+double StudentRecord::getCumulativeGPA()
+{
+	return CumulativeGPA; //return object's CumulativeGPA
+} // end function getCumulativeGPA
+
+// function that get the Graduation Year
+int StudentRecord::getGraduationYear()
+{
+	return GraduationYear; // return object's GraduationYear
+} // end function getGraduationYear
+
+// function created to display the collected information with validation
+void StudentRecord::printdisplayinfo()
+{
+	cout << "\nDisplaying the Student Record in the below:" << '\n';
+	cout << "Student ID	: " << StudentID << '\n'
+		<< "Student Name	: " << StudentName << '\n'
+		<< "Course Quarter	: " << CourseQuarter << '\n'
+		<< "Cumulative GPA	: " << CumulativeGPA << '\n'
+		<< "Graduation Year : " << GraduationYear << '\n'
+		<< "Thank You!";
+} // end function printdisplayinfo

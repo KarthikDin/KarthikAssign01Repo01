@@ -1,0 +1,48 @@
+// This file will be used as sample C++ header file for this demonstration
+*******
+**
+** Author		: Dinakaran, Karthik
+** Assignment 	: Project 01
+** Term 		: Spring, 2018
+** School 		: City University of Seattle
+** File Name	: StudentRecord.h
+** Description	: StudentRecord class definition
+**				  presents the public interface of the class.
+**				  Member-function definitions appear in StudentRecord.cpp
+** Date Created	: 06-April-2018
+**
+*******/
+//This program uses C++ standard library string class to involve 
+//the string representation of sequence of characters
+#include <string>
+using std::string; // the declaration of class string is in the namespace std
+
+// StudentRecord class definition
+class StudentRecord
+{
+
+private:
+	int StudentID; // Student Identification number for the Student Record
+	string StudentName; // Student Name for the Student Record
+	string CourseQuarter; // Quarter in which Course taken by the student
+	double CumulativeGPA; // Cumulative GPA in the subject taken in the specifc quarter 
+	int GraduationYear; // Student's expected graduation year
+
+public:
+	explicit StudentRecord(); // constructor initialize StudentRecord
+
+	void setStudentID(int StudentID); // sets the Student Identification Number
+	void setStudentName(string StudentName); // sets the Student name 
+	void setCourseQuarter(string CourseQuarter); // sets the Quarter when the course taken
+	void setCumulativeGPA(double CummulativeGPA); // sets the quarter cumulative GPA
+	void setGraduationYear(int GraduationYear); // sets the Student's Planned graduation year
+
+	int		getStudentID(); // gets the Student Identification Number
+	string	getStudentName(); // gets the Student name 
+	string	getCourseQuarter(); // gets the Quarter when the course taken
+	double	getCumulativeGPA(); // gets the quarter cumulative GPA
+	int		getGraduationYear(); // gets the Student's Planned graduation year
+
+	void	printdisplayinfo(); // displays the details collected from the user
+
+};
