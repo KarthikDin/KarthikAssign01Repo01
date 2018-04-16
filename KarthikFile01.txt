@@ -30,6 +30,7 @@ private:
 	double CumulativeGPA; // Cumulative GPA in the subject taken in the specifc quarter 
 	int GraduationYear; // Student's expected graduation year
 	int SchoolID; // SchoolID for reference
+	string SchoolName; // School Name for reference
 
 public:
 	explicit StudentRecord(); // constructor initialize StudentRecord
