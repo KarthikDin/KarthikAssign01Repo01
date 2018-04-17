@@ -1,1 +1,4 @@
 //Creating a new file to add using a different user into the repository - fixing bugs
+
+// Current version and its changes for case 6
+
