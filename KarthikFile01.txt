@@ -12,7 +12,7 @@
 ** Date Created	: 06-April-2018
 **
 ** Modification details
-** Added a variable SchoolID and comment for future process
+** Added a variable SchoolID and comment for future process.
 *******/
 //This program uses C++ standard library string class to involve 
 //the string representation of sequence of characters
