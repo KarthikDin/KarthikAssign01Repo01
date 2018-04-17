@@ -8,6 +8,8 @@
 ** File Name	: StudentRecord.cpp
 ** Description	: Definitions of the member function of the class StudentRecord
 ** Date Created	: 06-April-2018
+** Comments:
+** Comment added by the second user
 **
 *******/
 //This program uses C++ standard library iostream class to involve 
