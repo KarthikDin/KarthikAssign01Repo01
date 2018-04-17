@@ -22,7 +22,7 @@ using namespace std;
 // constructor initializes the variables
 StudentRecord::StudentRecord()
 {
-	StudentID = 0; // Student Identification number - Comment added by user 1
+	StudentID = 0;
 	StudentName = "";
 	CourseQuarter = "";
 	CumulativeGPA = 0;
